@@ -10,31 +10,31 @@ namespace ProjetoEscola_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LivroController : ControllerBase
+    public class FilmeController : ControllerBase
     {
        private  bibliotecaContext _context;
-       public LivroController(bibliotecaContext context)
+       public FilmeController(bibliotecaContext context)
         {
             // construtor
             _context = context;
         }
 
         [HttpGet]
-public ActionResult<List<Livro>> GetAll()
+public ActionResult<List<Filme>> GetAll()
 {
-return _context.Livro.ToList();
+return _context.Filme.ToList();
 }
 
         [HttpPost]
-        public async Task<ActionResult> post(Livro model)
+        public async Task<ActionResult> post(Filme model)
         {
             try
             {
-                _context.Livro.Add(model);
+                _context.Filme.Add(model);
                 if (await _context.SaveChangesAsync() == 1)
                 {
                     //return Ok();
-                    return Created($"/api/Livro/{model.codLivro}", model);
+                    return Created($"/api/Filme/{model.codFilme}", model);
                 }
             }
             catch
@@ -45,12 +45,12 @@ return _context.Livro.ToList();
             return BadRequest();
         }
 
-        [HttpGet("{LivroId}")]
-        public ActionResult<List<Livro>> Get(int LivroId)
+        [HttpGet("{FilmeId}")]
+        public ActionResult<List<Filme>> Get(int FilmeId)
         {
             try
             {
-                var result = _context.Livro.Find(LivroId);
+                var result = _context.Filme.Find(FilmeId);
                 if (result == null)
                 {
                     return NotFound();
@@ -62,19 +62,19 @@ return _context.Livro.ToList();
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }
         }
-        [HttpDelete("{LivroId}")]
-        public async Task<ActionResult> delete(int LivroId)
+        [HttpDelete("{FilmeId}")]
+        public async Task<ActionResult> delete(int FilmeId)
         {
             try
             {
-                //verifica se existe Livro a ser excluído
-                var Livro = await _context.Livro.FindAsync(LivroId);
-                if (Livro == null)
+                //verifica se existe Filme a ser excluído
+                var Filme = await _context.Filme.FindAsync(FilmeId);
+                if (Filme == null)
                 {
                     //método do EF
                     return NotFound();
                 }
-                _context.Remove(Livro);
+                _context.Remove(Filme);
                 await _context.SaveChangesAsync();
                 return NoContent();
             }
@@ -83,22 +83,22 @@ return _context.Livro.ToList();
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }
         }
-        [HttpPut("{LivroId}")]
-        public async Task<IActionResult> put(int LivroId, Livro dadosLivroAlt)
+        [HttpPut("{FilmeId}")]
+        public async Task<IActionResult> put(int FilmeId, Filme dadosFilmeAlt)
         {
             try
             {
-                var result = await _context.Livro.FindAsync(LivroId);
-                if (LivroId != result.id)
+                var result = await _context.Filme.FindAsync(FilmeId);
+                if (FilmeId != result.id)
                 {
                     return BadRequest();
                 }
-                result.codLivro = dadosLivroAlt.codLivro;
-                result.nomeLivro = dadosLivroAlt.nomeLivro;
-                result.dataLivro = dadosLivroAlt.dataLivro;
-                result.imagem = dadosLivroAlt.imagem;
+                result.codFilme = dadosFilmeAlt.codFilme;
+                result.nomeFilme = dadosFilmeAlt.nomeFilme;
+                result.dataFilme = dadosFilmeAlt.dataFilme;
+                result.imagem = dadosFilmeAlt.imagem;
                 await _context.SaveChangesAsync();
-                return Created($"/api/Livro/{dadosLivroAlt.codLivro}", dadosLivroAlt);
+                return Created($"/api/Filme/{dadosFilmeAlt.codFilme}", dadosFilmeAlt);
             }
             catch
             {
