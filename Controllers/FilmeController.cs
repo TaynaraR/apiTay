@@ -86,6 +86,7 @@ return _context.Filme.ToList();
         [HttpPut("{FilmeId}")]
         public async Task<IActionResult> put(int FilmeId, Filme dadosFilmeAlt)
         {
+            
             try
             {
                 var result = await _context.Filme.FindAsync(FilmeId);
@@ -97,6 +98,8 @@ return _context.Filme.ToList();
                 result.nomeFilme = dadosFilmeAlt.nomeFilme;
                 result.dataFilme = dadosFilmeAlt.dataFilme;
                 result.imagem = dadosFilmeAlt.imagem;
+                result.alugado = dadosFilmeAlt.alugado;
+                 result.alugadoPor = dadosFilmeAlt.alugadoPor;
                 await _context.SaveChangesAsync();
                 return Created($"/api/Filme/{dadosFilmeAlt.codFilme}", dadosFilmeAlt);
             }

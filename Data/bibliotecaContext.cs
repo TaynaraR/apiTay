@@ -21,6 +21,7 @@ namespace ProjetoEscola_API.Data
         public DbSet<usuario>? Usuario { get; set; }
 
          public DbSet<Filme>? Filme { get; set; }
+         
   
     }
 }
