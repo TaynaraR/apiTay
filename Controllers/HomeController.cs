@@ -33,7 +33,7 @@ namespace ProjetoEscola_API.Controllers
         public ActionResult<dynamic> Login([FromBody] usuario usuario)
         {
             
-            var perfil = _context.Usuario.Where(u => u.username == usuario.username &&
+            var perfil = _context.usuario.Where(u => u.username == usuario.username &&
 
             u.senha == usuario.senha)
 
