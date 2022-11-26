@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\009954631\\Desktop\\Trabalho final\\apiTay\\ProjetoEscola_API].csproj": {}
+    "/Users/u21114/Projeto Patricia/apiTay/ProjetoEscola_API].csproj": {}
   },
   "projects": {
-    "C:\\Users\\009954631\\Desktop\\Trabalho final\\apiTay\\ProjetoEscola_API].csproj": {
+    "/Users/u21114/Projeto Patricia/apiTay/ProjetoEscola_API].csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\009954631\\Desktop\\Trabalho final\\apiTay\\ProjetoEscola_API].csproj",
+        "projectUniqueName": "/Users/u21114/Projeto Patricia/apiTay/ProjetoEscola_API].csproj",
         "projectName": "ProjetoEscola_API]",
-        "projectPath": "C:\\Users\\009954631\\Desktop\\Trabalho final\\apiTay\\ProjetoEscola_API].csproj",
-        "packagesPath": "C:\\Users\\009954631\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\009954631\\Desktop\\Trabalho final\\apiTay\\obj\\",
+        "projectPath": "/Users/u21114/Projeto Patricia/apiTay/ProjetoEscola_API].csproj",
+        "packagesPath": "/Users/u21114/.nuget/packages/",
+        "outputPath": "/Users/u21114/Projeto Patricia/apiTay/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\009954631\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/u21114/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -61,8 +61,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -74,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
